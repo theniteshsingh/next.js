@@ -1,4 +1,6 @@
 import { nextStart } from 'next/dist/cli/next-start'
+import { validArgs } from 'next/dist/cli/next-start-args'
+import { getValidatedArgs } from 'next/dist/lib/get-validated-args'
 import httpMock, { Server } from 'http'
 
 // Prevents bin from running
@@ -18,7 +20,7 @@ describe.skip('start', () => {
     ;(httpMock as any).createServer.mockReturnValue(server)
 
     expect(server.keepAliveTimeout).toBe(undefined)
-    nextStart(['--keepAliveTimeout', '1234'])
+    nextStart(getValidatedArgs(validArgs, ['--keepAliveTimeout', '1234']))
     expect(server.keepAliveTimeout).toBe(1234)
   })
 
@@ -30,7 +32,7 @@ describe.skip('start', () => {
     ;(httpMock as any).createServer.mockReturnValue(server)
 
     expect(server.keepAliveTimeout).toBe(undefined)
-    nextStart([])
+    nextStart(getValidatedArgs(validArgs, []))
     expect(server.keepAliveTimeout).toBe(undefined)
   })
 })
