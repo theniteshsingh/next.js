@@ -5,16 +5,18 @@ use indexmap::{map::Entry, IndexMap};
 use next_core::{
     all_assets_from_entries,
     app_structure::find_app_dir,
-    emit_assets, get_edge_chunking_context, get_edge_compile_time_info,
+    emit_assets, get_edge_chunking_context_with_client_assets, get_edge_compile_time_info,
     get_edge_resolve_options_context,
     instrumentation::instrumentation_files,
     middleware::middleware_files,
     mode::NextMode,
     next_client::{get_client_chunking_context, get_client_compile_time_info},
     next_config::{JsConfig, NextConfig},
+    next_edge::context::get_edge_chunking_context,
     next_server::{
-        get_server_chunking_context, get_server_compile_time_info,
-        get_server_module_options_context, get_server_resolve_options_context, ServerContextType,
+        get_server_chunking_context, get_server_chunking_context_with_client_assets,
+        get_server_compile_time_info, get_server_module_options_context,
+        get_server_resolve_options_context, ServerContextType,
     },
     next_telemetry::NextFeatureTelemetry,
 };
@@ -519,25 +521,47 @@ impl Project {
     }
 
     #[turbo_tasks::function]
-    pub(super) fn server_chunking_context(self: Vc<Self>) -> Vc<BuildChunkingContext> {
-        get_server_chunking_context(
-            self.project_path(),
-            self.node_root(),
-            self.client_relative_path(),
-            self.next_config().computed_asset_prefix(),
-            self.server_compile_time_info().environment(),
-        )
+    pub(super) fn server_chunking_context(
+        self: Vc<Self>,
+        client_assets: bool,
+    ) -> Vc<BuildChunkingContext> {
+        if client_assets {
+            get_server_chunking_context_with_client_assets(
+                self.project_path(),
+                self.node_root(),
+                self.client_relative_path(),
+                self.next_config().computed_asset_prefix(),
+                self.server_compile_time_info().environment(),
+            )
+        } else {
+            get_server_chunking_context(
+                self.project_path(),
+                self.node_root(),
+                self.server_compile_time_info().environment(),
+            )
+        }
     }
 
     #[turbo_tasks::function]
-    pub(super) fn edge_chunking_context(self: Vc<Self>) -> Vc<Box<dyn EcmascriptChunkingContext>> {
-        get_edge_chunking_context(
-            self.project_path(),
-            self.node_root(),
-            self.client_relative_path(),
-            self.next_config().computed_asset_prefix(),
-            self.edge_compile_time_info().environment(),
-        )
+    pub(super) fn edge_chunking_context(
+        self: Vc<Self>,
+        client_assets: bool,
+    ) -> Vc<Box<dyn EcmascriptChunkingContext>> {
+        if client_assets {
+            get_edge_chunking_context_with_client_assets(
+                self.project_path(),
+                self.node_root(),
+                self.client_relative_path(),
+                self.next_config().computed_asset_prefix(),
+                self.edge_compile_time_info().environment(),
+            )
+        } else {
+            get_edge_chunking_context(
+                self.project_path(),
+                self.node_root(),
+                self.edge_compile_time_info().environment(),
+            )
+        }
     }
 
     /// Emit a telemetry event corresponding to [webpack configuration telemetry](https://github.com/vercel/next.js/blob/9da305fe320b89ee2f8c3cfb7ecbf48856368913/packages/next/src/build/webpack-config.ts#L2516)

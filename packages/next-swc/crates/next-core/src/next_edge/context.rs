@@ -150,7 +150,7 @@ pub async fn get_edge_resolve_options_context(
 }
 
 #[turbo_tasks::function]
-pub fn get_edge_chunking_context(
+pub fn get_edge_chunking_context_with_client_assets(
     project_path: Vc<FileSystemPath>,
     node_root: Vc<FileSystemPath>,
     client_root: Vc<FileSystemPath>,
@@ -168,6 +168,27 @@ pub fn get_edge_chunking_context(
             environment,
         )
         .asset_base_path(asset_prefix)
+        .reference_chunk_source_maps(should_debug("edge"))
+        .build(),
+    )
+}
+
+#[turbo_tasks::function]
+pub fn get_edge_chunking_context(
+    project_path: Vc<FileSystemPath>,
+    node_root: Vc<FileSystemPath>,
+    environment: Vc<Environment>,
+) -> Vc<Box<dyn EcmascriptChunkingContext>> {
+    let output_root = node_root.join("server/edge".to_string());
+    Vc::upcast(
+        DevChunkingContext::builder(
+            project_path,
+            output_root,
+            output_root,
+            output_root.join("chunks".to_string()),
+            output_root.join("assets".to_string()),
+            environment,
+        )
         .reference_chunk_source_maps(should_debug("edge"))
         .build(),
     )

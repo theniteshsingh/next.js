@@ -620,6 +620,7 @@ pub async fn get_server_module_options_context(
             let module_options_context = ModuleOptionsContext {
                 execution_context: Some(execution_context),
                 tree_shaking_mode: Some(TreeShakingMode::ReexportsOnly),
+                esm_url_rewrite_behavior: Some(UrlRewriteBehavior::Full),
                 ..Default::default()
             };
             let foreign_code_module_options_context = ModuleOptionsContext {
@@ -667,6 +668,7 @@ pub async fn get_server_module_options_context(
             let module_options_context = ModuleOptionsContext {
                 execution_context: Some(execution_context),
                 tree_shaking_mode: Some(TreeShakingMode::ReexportsOnly),
+                esm_url_rewrite_behavior: Some(UrlRewriteBehavior::Full),
                 ..Default::default()
             };
             let foreign_code_module_options_context = ModuleOptionsContext {
@@ -713,6 +715,7 @@ pub fn get_build_module_options_context() -> Vc<ModuleOptionsContext> {
     ModuleOptionsContext {
         enable_typescript_transform: Some(Default::default()),
         tree_shaking_mode: Some(TreeShakingMode::ReexportsOnly),
+        esm_url_rewrite_behavior: Some(UrlRewriteBehavior::Full),
         ..Default::default()
     }
     .cell()
@@ -728,11 +731,9 @@ pub fn get_server_runtime_entries(
 }
 
 #[turbo_tasks::function]
-pub fn get_server_chunking_context(
+pub fn get_server_chunking_context_with_client_assets(
     project_path: Vc<FileSystemPath>,
     node_root: Vc<FileSystemPath>,
-    // TODO(alexkirsz) Is this even necessary? Are assets not always on the client chunking context
-    // anyway?
     client_root: Vc<FileSystemPath>,
     asset_prefix: Vc<Option<String>>,
     environment: Vc<Environment>,
@@ -749,6 +750,27 @@ pub fn get_server_chunking_context(
         environment,
     )
     .asset_prefix(asset_prefix)
+    .minify_type(MinifyType::NoMinify)
+    .build()
+}
+
+#[turbo_tasks::function]
+pub fn get_server_chunking_context(
+    project_path: Vc<FileSystemPath>,
+    node_root: Vc<FileSystemPath>,
+    environment: Vc<Environment>,
+) -> Vc<BuildChunkingContext> {
+    // TODO(alexkirsz) This should return a trait that can be implemented by the
+    // different server chunking contexts. OR the build chunking context should
+    // support both production and development modes.
+    BuildChunkingContext::builder(
+        project_path,
+        node_root,
+        node_root,
+        node_root.join("server/chunks".to_string()),
+        node_root.join("server/assets".to_string()),
+        environment,
+    )
     .minify_type(MinifyType::NoMinify)
     .build()
 }
