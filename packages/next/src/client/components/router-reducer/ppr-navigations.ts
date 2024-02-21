@@ -233,6 +233,7 @@ export function updateCacheNodeOnNavigation(
     prefetchRsc: oldCacheNode.prefetchRsc,
     head: oldCacheNode.head,
     prefetchHead: oldCacheNode.prefetchHead,
+    loading: oldCacheNode.loading,
 
     // Everything is cloned except for the children, which we computed above.
     parallelRoutes: prefetchParallelRoutes,
@@ -511,13 +512,14 @@ function createPendingCacheNode(
   const isLeafSegment = parallelRoutes.size === 0
 
   const maybePrefetchRsc = prefetchData !== null ? prefetchData[2] : null
-
+  const maybePrefetchLoading = prefetchData !== null ? prefetchData[3] : null
   return {
     lazyData: null,
     parallelRoutes: parallelRoutes,
 
     prefetchRsc: maybePrefetchRsc !== undefined ? maybePrefetchRsc : null,
     prefetchHead: isLeafSegment ? prefetchHead : null,
+    loading: maybePrefetchLoading !== undefined ? maybePrefetchLoading : null,
 
     // Create a deferred promise. This will be fulfilled once the dynamic
     // response is received from the server.
@@ -606,6 +608,7 @@ function finishPendingCacheNode(
   // on the Cache Node.
   const rsc = cacheNode.rsc
   const dynamicSegmentData = dynamicData[2]
+  const loadingData = dynamicData[3]
   if (rsc === null) {
     // This is a lazy cache node. We can overwrite it. This is only safe
     // because we know that the LayoutRouter suspends if `rsc` is `null`.
@@ -615,6 +618,9 @@ function finishPendingCacheNode(
     // received from the server. If it was already resolved by a different
     // navigation, then this does nothing because we can't overwrite data.
     rsc.resolve(dynamicSegmentData)
+
+    // TODO: I'm pretty sure this violates the suspense rules.
+    cacheNode.loading = loadingData
   } else {
     // This is not a deferred RSC promise, nor is it empty, so it must have
     // been populated by a different navigation. We must not overwrite it.
@@ -760,6 +766,7 @@ export function updateCacheNodeOnPopstateRestoration(
 
     prefetchHead: shouldUsePrefetch ? oldCacheNode.prefetchHead : null,
     prefetchRsc: shouldUsePrefetch ? oldCacheNode.prefetchRsc : null,
+    loading: shouldUsePrefetch ? oldCacheNode.loading : null,
 
     // These are the cloned children we computed above
     parallelRoutes: newParallelRoutes,

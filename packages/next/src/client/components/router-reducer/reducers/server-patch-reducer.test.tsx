@@ -114,6 +114,7 @@ describe('serverPatchReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -123,6 +124,7 @@ describe('serverPatchReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -135,7 +137,7 @@ describe('serverPatchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: url,
     })
@@ -165,14 +167,17 @@ describe('serverPatchReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -181,6 +186,7 @@ describe('serverPatchReducer', () => {
                     },
                     "somewhere-else" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "" => {
@@ -190,6 +196,7 @@ describe('serverPatchReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -315,6 +322,7 @@ describe('serverPatchReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -324,6 +332,7 @@ describe('serverPatchReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -345,7 +354,7 @@ describe('serverPatchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: url,
     })
@@ -378,14 +387,17 @@ describe('serverPatchReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -394,6 +406,7 @@ describe('serverPatchReducer', () => {
                     },
                     "about" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "" => {
@@ -403,6 +416,7 @@ describe('serverPatchReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -416,6 +430,7 @@ describe('serverPatchReducer', () => {
                     },
                     "somewhere-else" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "" => {
@@ -425,6 +440,7 @@ describe('serverPatchReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -579,7 +595,7 @@ describe('serverPatchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes: new Map(),
       location: url,
     })

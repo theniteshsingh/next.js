@@ -67,6 +67,7 @@ describe('serverPatchReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -76,6 +77,7 @@ describe('serverPatchReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -87,7 +89,7 @@ describe('serverPatchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -150,6 +152,7 @@ describe('serverPatchReducer', () => {
       nextUrl: '/linking/about',
       cache: {
         lazyData: null,
+        loading: null,
         rsc: (
           <html>
             <head></head>
@@ -175,6 +178,7 @@ describe('serverPatchReducer', () => {
                             rsc: <>Linking page</>,
                             prefetchRsc: null,
                             parallelRoutes: new Map(),
+                            loading: null,
                           },
                         ],
                       ]),
@@ -183,6 +187,7 @@ describe('serverPatchReducer', () => {
                   lazyData: null,
                   rsc: <>Linking layout level</>,
                   prefetchRsc: null,
+                  loading: null,
                 },
               ],
             ]),
@@ -235,6 +240,7 @@ describe('serverPatchReducer', () => {
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
                         parallelRoutes: new Map(),
+                        loading: null,
                       },
                     ],
                   ]),
@@ -243,6 +249,7 @@ describe('serverPatchReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -254,7 +261,7 @@ describe('serverPatchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -263,7 +270,7 @@ describe('serverPatchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -329,6 +336,7 @@ describe('serverPatchReducer', () => {
       nextUrl: '/linking/about',
       cache: {
         lazyData: null,
+        loading: null,
         rsc: (
           <html>
             <head></head>
@@ -354,6 +362,7 @@ describe('serverPatchReducer', () => {
                             rsc: <>Linking page</>,
                             prefetchRsc: null,
                             parallelRoutes: new Map(),
+                            loading: null,
                           },
                         ],
                       ]),
@@ -362,6 +371,7 @@ describe('serverPatchReducer', () => {
                   lazyData: null,
                   rsc: <>Linking layout level</>,
                   prefetchRsc: null,
+                  loading: null,
                 },
               ],
             ]),

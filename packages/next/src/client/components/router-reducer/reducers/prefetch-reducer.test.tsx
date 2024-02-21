@@ -103,6 +103,7 @@ describe('prefetchReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -112,6 +113,7 @@ describe('prefetchReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -123,7 +125,7 @@ describe('prefetchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -211,6 +213,7 @@ describe('prefetchReducer', () => {
           </html>
         ),
         prefetchRsc: null,
+        loading: null,
         parallelRoutes: initialParallelRoutes,
       },
       tree: [
@@ -259,6 +262,7 @@ describe('prefetchReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -268,6 +272,7 @@ describe('prefetchReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -279,7 +284,7 @@ describe('prefetchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -289,7 +294,7 @@ describe('prefetchReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -390,6 +395,7 @@ describe('prefetchReducer', () => {
           </html>
         ),
         prefetchRsc: null,
+        loading: null,
         parallelRoutes: initialParallelRoutes,
       },
       tree: [

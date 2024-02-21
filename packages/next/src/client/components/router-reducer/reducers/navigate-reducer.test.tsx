@@ -142,6 +142,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -149,6 +150,7 @@ describe('navigateReducer', () => {
                 ],
               ]),
               lazyData: null,
+              loading: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
             },
@@ -162,7 +164,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -182,14 +184,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -198,6 +203,7 @@ describe('navigateReducer', () => {
                     },
                     "about" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "__PAGE__" => {
@@ -207,6 +213,7 @@ describe('navigateReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -361,6 +368,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -368,6 +376,7 @@ describe('navigateReducer', () => {
                 ],
               ]),
               lazyData: null,
+              loading: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
             },
@@ -381,7 +390,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -402,14 +411,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -418,6 +430,7 @@ describe('navigateReducer', () => {
                     },
                     "about" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "__PAGE__" => {
@@ -427,6 +440,7 @@ describe('navigateReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -581,6 +595,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -588,6 +603,7 @@ describe('navigateReducer', () => {
                 ],
               ]),
               lazyData: null,
+              loading: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
             },
@@ -601,7 +617,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -625,14 +641,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -743,6 +762,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -750,6 +770,7 @@ describe('navigateReducer', () => {
                 ],
               ]),
               lazyData: null,
+              loading: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
             },
@@ -763,7 +784,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -787,14 +808,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -905,6 +929,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -912,6 +937,7 @@ describe('navigateReducer', () => {
                 ],
               ]),
               lazyData: null,
+              loading: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
             },
@@ -925,7 +951,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking#hash', 'https://localhost') as any,
     })
@@ -946,14 +972,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1064,6 +1093,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -1073,6 +1103,7 @@ describe('navigateReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -1091,7 +1122,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -1142,14 +1173,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1158,6 +1192,7 @@ describe('navigateReducer', () => {
                     },
                     "about" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "__PAGE__" => {
@@ -1167,6 +1202,7 @@ describe('navigateReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -1337,6 +1373,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Audience Page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -1351,6 +1388,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Views Page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -1365,6 +1403,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Children Page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -1374,6 +1413,7 @@ describe('navigateReducer', () => {
               lazyData: null,
               rsc: <>Layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -1385,7 +1425,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/parallel-tab-bar', 'https://localhost') as any,
     })
@@ -1406,14 +1446,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": undefined,
           "parallelRoutes": Map {
             "children" => Map {
               "parallel-tab-bar" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "audience" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1422,6 +1465,7 @@ describe('navigateReducer', () => {
                     },
                     "demographics" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "__PAGE__" => {
@@ -1431,6 +1475,7 @@ describe('navigateReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
@@ -1444,6 +1489,7 @@ describe('navigateReducer', () => {
                   "views" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1454,6 +1500,7 @@ describe('navigateReducer', () => {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1625,6 +1672,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -1634,6 +1682,7 @@ describe('navigateReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -1645,7 +1694,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking#hash', 'https://localhost') as any,
     })
@@ -1666,14 +1715,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1784,6 +1836,7 @@ describe('navigateReducer', () => {
                         lazyData: null,
                         rsc: <>Linking page</>,
                         prefetchRsc: null,
+                        loading: null,
                         parallelRoutes: new Map(),
                       },
                     ],
@@ -1793,6 +1846,7 @@ describe('navigateReducer', () => {
               lazyData: null,
               rsc: <>Linking layout level</>,
               prefetchRsc: null,
+              loading: null,
             },
           ],
         ]),
@@ -1804,7 +1858,7 @@ describe('navigateReducer', () => {
       initialTree,
       initialHead: null,
       initialCanonicalUrl,
-      initialSeedData: ['', {}, children],
+      initialSeedData: ['', {}, children, null],
       initialParallelRoutes,
       location: new URL('/linking', 'https://localhost') as any,
     })
@@ -1824,14 +1878,17 @@ describe('navigateReducer', () => {
         "buildId": "development",
         "cache": {
           "lazyData": null,
+          "loading": null,
           "parallelRoutes": Map {
             "children" => Map {
               "linking" => {
                 "lazyData": null,
+                "loading": null,
                 "parallelRoutes": Map {
                   "children" => Map {
                     "__PAGE__" => {
                       "lazyData": null,
+                      "loading": null,
                       "parallelRoutes": Map {},
                       "prefetchRsc": null,
                       "rsc": <React.Fragment>
@@ -1840,6 +1897,7 @@ describe('navigateReducer', () => {
                     },
                     "about" => {
                       "lazyData": null,
+                      "loading": undefined,
                       "parallelRoutes": Map {
                         "children" => Map {
                           "__PAGE__" => {
@@ -1849,6 +1907,7 @@ describe('navigateReducer', () => {
                               </title>
                             </React.Fragment>,
                             "lazyData": null,
+                            "loading": null,
                             "parallelRoutes": Map {},
                             "prefetchRsc": null,
                             "rsc": null,
