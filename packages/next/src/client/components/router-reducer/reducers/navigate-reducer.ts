@@ -17,7 +17,6 @@ import type {
   ReadonlyReducerState,
   ReducerState,
 } from '../router-reducer-types'
-import { PrefetchCacheEntryStatus } from '../router-reducer-types'
 import { handleMutable } from '../handle-mutable'
 import { applyFlightData } from '../apply-flight-data'
 import { prefetchQueue } from './prefetch-reducer'
@@ -135,11 +134,7 @@ function navigateReducer_noPPR(
     buildId: state.buildId,
     prefetchCache: state.prefetchCache,
   })
-  const {
-    treeAtTimeOfPrefetch,
-    data,
-    status: prefetchEntryCacheStatus,
-  } = prefetchValues
+  const { treeAtTimeOfPrefetch, data } = prefetchValues
 
   prefetchQueue.bump(data)
 
@@ -199,8 +194,7 @@ function navigateReducer_noPPR(
             currentCache,
             cache,
             flightDataPath,
-            prefetchValues.kind === 'auto' &&
-              prefetchEntryCacheStatus === PrefetchCacheEntryStatus.reusable
+            prefetchValues
           )
 
           if (
@@ -305,11 +299,7 @@ function navigateReducer_PPR(
     buildId: state.buildId,
     prefetchCache: state.prefetchCache,
   })
-  const {
-    treeAtTimeOfPrefetch,
-    data,
-    status: prefetchEntryCacheStatus,
-  } = prefetchValues
+  const { treeAtTimeOfPrefetch, data } = prefetchValues
 
   prefetchQueue.bump(data)
 
@@ -446,8 +436,7 @@ function navigateReducer_PPR(
               currentCache,
               cache,
               flightDataPath,
-              prefetchValues.kind === 'auto' &&
-                prefetchEntryCacheStatus === PrefetchCacheEntryStatus.reusable
+              prefetchValues
             )
 
             if (
