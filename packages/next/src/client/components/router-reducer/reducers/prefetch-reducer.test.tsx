@@ -162,8 +162,10 @@ describe('prefetchReducer', () => {
             prefetchTime: expect.any(Number),
             kind: PrefetchKind.AUTO,
             lastUsedTime: null,
+            renewalTime: null,
             treeAtTimeOfPrefetch: initialTree,
             status: PrefetchCacheEntryStatus.fresh,
+            loadingStatus: null,
           },
         ],
         [
@@ -173,8 +175,10 @@ describe('prefetchReducer', () => {
             data: prom,
             kind: PrefetchKind.AUTO,
             lastUsedTime: null,
+            renewalTime: null,
             prefetchTime: expect.any(Number),
             status: PrefetchCacheEntryStatus.fresh,
+            loadingStatus: PrefetchCacheEntryStatus.fresh,
             treeAtTimeOfPrefetch: [
               '',
               {
@@ -331,6 +335,8 @@ describe('prefetchReducer', () => {
       treeAtTimeOfPrefetch: initialTree,
       key: '/linking',
       status: PrefetchCacheEntryStatus.fresh,
+      renewalTime: null,
+      loadingStatus: PrefetchCacheEntryStatus.fresh,
     })
 
     const expectedState: ReturnType<typeof prefetchReducer> = {
@@ -344,8 +350,10 @@ describe('prefetchReducer', () => {
             prefetchTime: expect.any(Number),
             kind: PrefetchKind.AUTO,
             lastUsedTime: null,
+            renewalTime: null,
             treeAtTimeOfPrefetch: initialTree,
             status: PrefetchCacheEntryStatus.fresh,
+            loadingStatus: null,
           },
         ],
         [
@@ -357,6 +365,8 @@ describe('prefetchReducer', () => {
             kind: PrefetchKind.AUTO,
             lastUsedTime: null,
             status: PrefetchCacheEntryStatus.fresh,
+            loadingStatus: PrefetchCacheEntryStatus.fresh,
+            renewalTime: null,
             treeAtTimeOfPrefetch: [
               '',
               {

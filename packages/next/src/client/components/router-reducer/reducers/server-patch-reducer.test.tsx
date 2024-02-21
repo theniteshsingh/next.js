@@ -239,7 +239,9 @@ describe('serverPatchReducer', () => {
             "key": "/linking/about",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -492,7 +494,9 @@ describe('serverPatchReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -522,7 +526,9 @@ describe('serverPatchReducer', () => {
             "key": "/linking/about",
             "kind": "temporary",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",

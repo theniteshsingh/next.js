@@ -265,7 +265,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -290,7 +292,9 @@ describe('navigateReducer', () => {
             "key": "/linking/about",
             "kind": "temporary",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -492,7 +496,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -517,7 +523,9 @@ describe('navigateReducer', () => {
             "key": "/linking/about",
             "kind": "temporary",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -689,7 +697,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -856,7 +866,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1020,7 +1032,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1254,7 +1268,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1279,7 +1295,9 @@ describe('navigateReducer', () => {
             "key": "/linking/about",
             "kind": "auto",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1545,7 +1563,9 @@ describe('navigateReducer', () => {
             "key": "/parallel-tab-bar",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1578,7 +1598,9 @@ describe('navigateReducer', () => {
             "key": "/parallel-tab-bar/demographics",
             "kind": "temporary",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1763,7 +1785,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1959,7 +1983,9 @@ describe('navigateReducer', () => {
             "key": "/linking",
             "kind": "auto",
             "lastUsedTime": null,
+            "loadingStatus": null,
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
@@ -1984,7 +2010,9 @@ describe('navigateReducer', () => {
             "key": "/linking/about",
             "kind": "temporary",
             "lastUsedTime": 1690329600000,
+            "loadingStatus": "fresh",
             "prefetchTime": 1690329600000,
+            "renewalTime": null,
             "status": "fresh",
             "treeAtTimeOfPrefetch": [
               "",
