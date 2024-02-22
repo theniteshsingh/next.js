@@ -1336,28 +1336,33 @@ export default async function build(
         const startTime = process.hrtime()
         const bindings = await loadBindings(config?.experimental?.useWasmBinary)
         const dev = false
-        const project = await bindings.turbo.createProject({
-          projectPath: dir,
-          rootPath: config.experimental.outputFileTracingRoot || dir,
-          nextConfig: config,
-          jsConfig: await getTurbopackJsConfig(dir, config),
-          watch: false,
-          dev,
-          env: process.env as Record<string, string>,
-          defineEnv: createDefineEnv({
-            isTurbopack: true,
-            allowedRevalidateHeaderKeys: undefined,
-            clientRouterFilters: undefined,
-            config,
-            // When passing `false` you get `react.jsxDEV is not a function`
+        const project = await bindings.turbo.createProject(
+          {
+            projectPath: dir,
+            rootPath: config.experimental.outputFileTracingRoot || dir,
+            nextConfig: config,
+            jsConfig: await getTurbopackJsConfig(dir, config),
+            watch: false,
             dev,
-            distDir,
-            fetchCacheKeyPrefix: undefined,
-            hasRewrites,
-            middlewareMatchers: undefined,
-            previewModeId: undefined,
-          }),
-        })
+            env: process.env as Record<string, string>,
+            defineEnv: createDefineEnv({
+              isTurbopack: true,
+              allowedRevalidateHeaderKeys: undefined,
+              clientRouterFilters: undefined,
+              config,
+              // When passing `false` you get `react.jsxDEV is not a function`
+              dev,
+              distDir,
+              fetchCacheKeyPrefix: undefined,
+              hasRewrites,
+              middlewareMatchers: undefined,
+              previewModeId: undefined,
+            }),
+          },
+          {
+            memoryLimit: 10 * 1024 * 1024 * 1024,
+          }
+        )
 
         await fs.mkdir(path.join(distDir, 'server'), { recursive: true })
         await fs.mkdir(path.join(distDir, 'static', buildId), {
