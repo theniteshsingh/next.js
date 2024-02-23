@@ -286,7 +286,7 @@ pub async fn project_new(
     ))
 }
 
-#[napi(ts_return_type = "{ __napiType: \"Project\" }")]
+#[napi]
 pub async fn project_update(
     #[napi(ts_arg_type = "{ __napiType: \"Project\" }")] project: External<ProjectInstance>,
     options: NapiPartialProjectOptions,
@@ -301,6 +301,15 @@ pub async fn project_update(
         })
         .await
         .map_err(|e| napi::Error::from_reason(PrettyPrintError(&e).to_string()))?;
+    Ok(())
+}
+
+#[napi]
+pub async fn project_gc(
+    #[napi(ts_arg_type = "{ __napiType: \"Project\" }")] project: External<ProjectInstance>,
+) -> napi::Result<()> {
+    let turbo_tasks = project.turbo_tasks.clone();
+    turbo_tasks.backend().run_gc(false, &*turbo_tasks);
     Ok(())
 }
 
